@@ -1,10 +1,12 @@
 import time
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 from watchdog.events import FileSystemEvent, FileSystemEventHandler
 from watchdog.observers import Observer
 
-DOWNLOADS_PATH = "/home/munzir/Downloads"
+load_dotenv()
+DOWNLOADS_PATH = os.getenv("DOWNLOADS_PATH")
 
 
 class DownloadDetector(FileSystemEventHandler):
