@@ -13,16 +13,16 @@ A Python application that monitors your downloads folder and automatically proce
 
 The application is organized into modular components:
 
-- **[`src/utils.py`](src/utils.py)**: Core utilities for file processing, MIME type detection, and PDF operations
+- **[`src/utils.py`](src/utils.py)**: Core utilities for file processing
 - **[`src/file_detector.py`](src/file_detector.py)**: File system monitoring and download detection
 - **[`src/ai_processor.py`](src/ai_processor.py)**: AI processing for both images and PDFs
 - **[`src/file_info.py`](src/file_info.py)**: File information display and formatting
-- **[`src/auto_processor.py`](src/auto_processor.py)**: Automated file monitoring with AI processing
+- **[`src/main.py`](src/main.py)**: Automated file monitoring with AI processing
 
 ## Installation
 
 1. Clone this repository
-2. Install dependencies using uv:
+2. Install dependencies using [uv](https://docs.astral.sh/uv/getting-started/installation/):
    ```bash
    uv sync
    ```
@@ -62,15 +62,6 @@ The application supports PDF processing with the following features:
 - **Metadata Extraction**: Retrieves PDF metadata including title, author, and page count
 - **AI Analysis**: Summarizes PDF content using the AI model
 
-## Dependencies
-
-- `dotenv`: Environment variable management
-- `langchain-ollama`: LangChain integration for Ollama
-- `ollama`: Ollama client library
-- `pillow`: Image processing
-- `watchdog`: File system monitoring
-- `pymupdf`: PDF processing and text extraction
-
 ## AI Model
 
 This application uses the `qwen3-vl:2b` model from Ollama, which supports both:
@@ -93,12 +84,3 @@ ollama pull qwen3-vl:2b
 
 ### Documents
 - PDF (.pdf)
-
-## Testing
-
-Run the test suite to verify functionality:
-
-```bash
-uv run python test_pdf.py
-```
-
