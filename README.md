@@ -51,7 +51,7 @@ Monitor your downloads folder and automatically process new images and PDFs with
 
 ```bash
 # Full automated processing with AI analysis
-uv run python src/auto_processor.py
+uv run python src/main.py
 ```
 
 ## PDF Support
