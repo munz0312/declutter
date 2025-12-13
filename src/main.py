@@ -1,8 +1,12 @@
 import ollama
+from dotenv import load_dotenv
+import os
+load_dotenv()
+INFERENCE_HOST = os.getenv("INFERENCE_HOST")
 
 
 def main():
-    client = ollama.Client(host='http://192.168.1.131:11434')
+    client = ollama.Client(host=INFERENCE_HOST)
     response = client.chat(
         model='qwen2.5vl:3b',
         messages=[{

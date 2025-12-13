@@ -5,10 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-<<<<<<< Updated upstream
     "dotenv>=0.9.9",
-=======
     "ollama>=0.6.1",
->>>>>>> Stashed changes
     "watchdog>=6.0.0",
 ]
