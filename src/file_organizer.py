@@ -19,8 +19,9 @@ class FileOrganizerAgent:
         """Ensure the base organization directory exists"""
         if not self.organization_base_dir.exists():
             self.organization_base_dir.mkdir(parents=True, exist_ok=True)
-            print(f"Created organization base directory: {
-                  self.organization_base_dir}")
+            print(
+                f"""Created organization base directory: {self.organization_base_dir}"""
+            )
 
     def _setup_categories(self):
         """Define hard-coded categories and their keywords"""
@@ -95,8 +96,9 @@ class FileOrganizerAgent:
                 misc_dir = self.organization_base_dir / "misc"
                 target_path = misc_dir / filename
                 print(
-                    f"File {filename} already exists in {
-                        category} directory. Moving to misc folder."
+                    f"""File {filename} already exists in {
+                        category
+                    } directory. Moving to misc folder."""
                 )
 
             # Move the file
