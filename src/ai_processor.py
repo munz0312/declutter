@@ -6,7 +6,7 @@ import utils
 class AIProcessor:
     """Handles AI processing of files"""
 
-    def __init__(self, inference_host, model='qwen3-vl:2b'):
+    def __init__(self, inference_host, model="qwen3-vl:2b"):
         self.client = ChatOllama(model=model, base_url=inference_host)
 
     def process_file(self, file_path):
@@ -30,14 +30,14 @@ class AIProcessor:
                         {
                             "type": "text",
                             "text": """
-                                    What's in this image?
-                                    Describe it briefly and simply in one sentence.
-                                    """
+                                    Categorise this image into one of the following: documents, images,
+                                    invoices, presentations, spreadsheets, or miscellaneous
+                                    """,
                         },
                         {
                             "type": "image_url",
-                            "image_url": f"data:{mime_type};base64,{image_data}"
-                        }
+                            "image_url": f"data:{mime_type};base64,{image_data}",
+                        },
                     ]
                 )
             ]
@@ -66,10 +66,12 @@ class AIProcessor:
                         {
                             "type": "text",
                             "text": f"""
-                                    Analyze this PDF content and provide a brief summary in one sentence:
+                                    Analyze this PDF content and categorise it into one of the following:
+                                    documents, images, invoices, presentations, spreadsheets, or miscellaneous
+                                    Only return the singular word for the category - no need to show analysis
 
                                     {pdf_text}
-                                    """
+                                    """,
                         }
                     ]
                 )

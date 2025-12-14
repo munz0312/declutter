@@ -18,6 +18,7 @@ The application is organized into modular components:
 - **[`src/ai_processor.py`](src/ai_processor.py)**: AI processing for both images and PDFs
 - **[`src/file_info.py`](src/file_info.py)**: File information display and formatting
 - **[`src/main.py`](src/main.py)**: Automated file monitoring with AI processing
+- **[`src/file_organizer.py`](src/file_organizer.py)**: File organizing agent 
 
 ## Installation
 
@@ -41,16 +42,19 @@ DOWNLOADS_PATH=/home/username/Downloads
 
 # Ollama inference host URL
 INFERENCE_HOST=http://localhost:11434
+
+# Directory for the organised files
+ORGANIZATION_BASE_DIR=/home/Bob/declutter/
+
 ```
 
 ## Usage
 
 ### Auto-Process with AI
 
-Monitor your downloads folder and automatically process new images and PDFs with AI:
+Monitor your downloads folder and automatically organise new images and PDFs with AI:
 
 ```bash
-# Full automated processing with AI analysis
 uv run python src/main.py
 ```
 
